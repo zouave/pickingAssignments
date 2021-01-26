@@ -1,0 +1,4 @@
+.results {
+	display: inline-grid;
+	gap: 5px;
+}

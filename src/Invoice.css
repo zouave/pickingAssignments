@@ -1,0 +1,54 @@
+.invoiceBox {
+  border: 2px solid black;
+  color: black;
+  margin: 5px;
+  padding: 5px;
+  border-radius: 10px 10px;
+}
+.invoiceBox1 {
+  border: 2px solid black;
+  color: black;
+  margin: 5px;
+  padding: 5px;
+  border-radius: 10px 10px;
+}
+.details {
+  background-color: #00ffff; /*DeepSkyBlue*/
+  width: 150px;
+  height: 50px;
+  border-radius: 5px 5px;
+  box-shadow: 3px 3px;
+  font-weight: bold;
+}
+
+.details:hover {
+	background-color: #00ced1;
+	transform: scale(1.025);
+	cursor: pointer;
+}
+
+.add {
+  background-color: #008000; /*Green*/
+}
+
+.cancel {
+  background-color: #FF0000; /*Red*/
+}
+
+.completed {
+  background-color: #006400; /*DarkGreen*/
+}
+
+.show {
+  display: inline-block;
+}
+
+.hide {
+  display: none;
+}
+
+.abs {
+  position: sticky;
+  left: 100px;
+  background-color: gray;
+}

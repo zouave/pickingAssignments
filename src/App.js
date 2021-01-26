@@ -1,25 +1,44 @@
-import logo from './logo.svg';
+import React, {Component} from 'react';
 import './App.css';
+import InvoiceList from './InvoiceList';
+// import Test from './Test';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+  constructor() {
+    super();
+    this.state = {
+      page: 'Picking'
+    }
+  }
+
+  componentDidMount() {
+
+  }
+
+  testFunction(arg) {
+    console.log('Can run function call back with Test class.', arg)
+  }
+
+  // <Test passProps={this.testFunction}/>
+  render() {
+    const { page } = this.state;
+
+    if (page === 'Picking') {
+      return (
+        <div className='invoiceContainer'>
+          <InvoiceList />
+        </div>
+      )
+    } else if (page === 'Workers') {
+      return 'Workers Page.'
+    } else if (page === 'Settings') {
+      return 'Settings Page.'
+    }  else if (page === 'InvoiceDetails') {
+      return 'Invoice Details Page.'
+    } else {
+      return 'Page value is not Picking, Workers, Settings'
+    }
+  }
 }
 
 export default App;
