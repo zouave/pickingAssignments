@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/pickingAssignments/static/css/main.8913354f.chunk.css",
+    "main.css": "/pickingAssignments/static/css/main.41c6f354.chunk.css",
     "main.js": "/pickingAssignments/static/js/main.2f9d7704.chunk.js",
     "main.js.map": "/pickingAssignments/static/js/main.2f9d7704.chunk.js.map",
     "runtime-main.js": "/pickingAssignments/static/js/runtime-main.51cd3393.js",
@@ -12,14 +12,14 @@
     "static/js/3.5fd7c895.chunk.js.map": "/pickingAssignments/static/js/3.5fd7c895.chunk.js.map",
     "index.html": "/pickingAssignments/index.html",
     "static/css/2.31461e4f.chunk.css.map": "/pickingAssignments/static/css/2.31461e4f.chunk.css.map",
-    "static/css/main.8913354f.chunk.css.map": "/pickingAssignments/static/css/main.8913354f.chunk.css.map",
+    "static/css/main.41c6f354.chunk.css.map": "/pickingAssignments/static/css/main.41c6f354.chunk.css.map",
     "static/js/2.ba981a20.chunk.js.LICENSE.txt": "/pickingAssignments/static/js/2.ba981a20.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.51cd3393.js",
     "static/css/2.31461e4f.chunk.css",
     "static/js/2.ba981a20.chunk.js",
-    "static/css/main.8913354f.chunk.css",
+    "static/css/main.41c6f354.chunk.css",
     "static/js/main.2f9d7704.chunk.js"
   ]
 }
