@@ -1,11 +1,10 @@
-import React from 'react';
-import SearchWorker from './SearchWorker';
+import React, {useState} from 'react';
+import OpenSearchBox from './OpenSearchBox';
 import {workers} from './workers';
 import './InvoiceBoxOptions.css';
 
 const InvoiceBoxOptions = ({clickedSearch, selectedSearch, id}) => {
-	const [searchField, setSeearchField] = React.useState('');
-	const [viewScroll, setViewScroll] = React.useState(false);
+	const [searchField, setSeearchField] = useState('');
 	let filteredWorkers = [];
 
 	if(searchField.length > 0 ) {
@@ -16,10 +15,16 @@ const InvoiceBoxOptions = ({clickedSearch, selectedSearch, id}) => {
 	
 	if (selectedSearch === id) {
 		return (
-			<div>
+			<div className='flexit'>
 				<button className='box' onClick={console.log(id)}>Details</button>
-				<SearchWorker className='box'  filteredWorkers={filteredWorkers} searchWorker={(event) => setSeearchField(event.target.value)} />
 
+				<div className='father'>
+					<OpenSearchBox 
+					className='box1'
+					filteredWorkers={filteredWorkers} 
+					searchWorker={(event) => setSeearchField(event.target.value)}
+					/>
+				</div>
 			</div>
 		)	
 	}

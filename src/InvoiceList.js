@@ -2,7 +2,6 @@ import React, {Component} from 'react';
 import './InvoiceList.css';
 import {invoices} from './invoices';
 import Invoice from './Invoice';
-import {workers} from './workers';
 
 class InvoiceList extends Component {
 	constructor(props) {
@@ -10,7 +9,7 @@ class InvoiceList extends Component {
 		this.state = {
 			selected: null,
 			searchField: '',
-			worker: []
+	
 		}
 		//This binding is necessary to make this work in the call back
 		this.selectedInvoice = this.selectedInvoice.bind(this);

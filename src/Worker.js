@@ -2,7 +2,6 @@ import React from 'react';
 import './Worker.css';
 
 const Worker = ({employeeID, name, status}) => {
-
 	// console.log(name);
 	return (
 		<div className='searchResults'>

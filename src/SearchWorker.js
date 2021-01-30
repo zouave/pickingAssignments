@@ -8,7 +8,7 @@ const SearchWorker = ({searchWorker, filteredWorkers}) => {
 		return (
 			<Fragment>
 				<input
-					className='pa3 ma3 ba b--green bg-lightest-blue'
+					className='searchBar pa3  ba b--green bg-lightest-blue'
 					type='search' 
 					placeholder='search workers'
 					onChange={searchWorker}
@@ -21,7 +21,7 @@ const SearchWorker = ({searchWorker, filteredWorkers}) => {
 
 	return (
 		<input
-			className='pa3 ma3 ba b--green bg-lightest-blue'
+			className='searchBar pa3 ba b--green bg-lightest-blue'
 			type='search' 
 			placeholder='search workers'
 			onChange={searchWorker}

@@ -1,8 +1,6 @@
 import React, {Component, Fragment} from 'react';
 import './Invoice.css';
-// import {workers} from './workers';
-import WorkerList from './WorkerList';
-import SearchWorker from './SearchWorker';
+
 
 import InvoiceBoxOptions from './InvoiceBoxOptions';
 
@@ -31,7 +29,7 @@ class Invoice extends Component {
 	}
 
 	renderInvoice() {
-		const {selected, passSelectedInvoice, id, company, quantity, filteredWorkers, searchField, searchWorker, value} = this.props;
+		const {selected, passSelectedInvoice, id, company, quantity} = this.props;
 
 		if (selected === id) {
 			return (
