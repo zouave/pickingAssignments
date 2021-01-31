@@ -5,7 +5,6 @@ const OpenSearchBox = ({filteredWorkers, searchWorker}) => {
 
 	return (
 		<SearchWorker 
-			className='box1'  
 			filteredWorkers={filteredWorkers} 
 			searchWorker={searchWorker} 
 		/>

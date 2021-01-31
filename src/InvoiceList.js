@@ -26,11 +26,6 @@ class InvoiceList extends Component {
 	}
 
 	renderInvoiceList() {
-		// const {searchField} = this.state;
-		// const filteredWorkers = workers.filter(worker => {
-		// 	return worker.name.toLowerCase().includes(searchField.toLowerCase());
-		// })
-
 		return (
 			<div className=''>
 				{
@@ -42,22 +37,15 @@ class InvoiceList extends Component {
 								quantity={invoice.cases}
 								selected={this.state.selected}
 								passSelectedInvoice={this.selectedInvoice}
-								// filteredWorkers={filteredWorkers}
-								// searchField={searchField}
-								// searchWorker={this.onSearchWorker}
-								// value={searchField}
 							/>
 					)
 				}
 			</div>
 		)
-
 	}
 	render() {
-
 		return this.renderInvoiceList()		
 	}
-	
 }
 
 export default InvoiceList;
