@@ -11,7 +11,21 @@
 }
 
 .box {
-	width: 200px;
-	margin: 0px 25px;
+	width: 90px;
+	height: 40px;
+	margin: 0;
+	padding: 0;
+	background-color: #007bff;
+	border-color: #007bff;
+	box-shadow: 2px 5px;
 }
 
+.box:hover {
+	background-color: #007bc0;
+}
+
+
+.border {
+  border: 1px solid black;
+  text-align:  center;
+}

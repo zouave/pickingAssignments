@@ -44,6 +44,17 @@ tbody tr:hover {
   background-color: #eee;
 }
 
+.invoiceNumber, .worker, .status  {
+  width: 15vw;
+}
+
+.quantity {
+  width: 10vw;
+}
+
+.border {
+  border: 1px solid blue;
+}
 .details {
   background-color: #00BFFF; /*DeepSkyBlue*/
 }

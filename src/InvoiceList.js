@@ -28,7 +28,16 @@ class InvoiceList extends Component {
 	renderInvoiceList() {
 		return (
 			<div className=''>
-				{
+	
+					<table>
+						<tr>
+							<th className='invoiceNumber border'>Invoice #</th>
+							<th className='comapny border'>Company</th>
+							<th className='worker border'>Worker</th>
+							<th className='status border'>Status</th>
+							<th className='quantity border'>Quantity</th>
+						</tr>
+					{
 					invoices.map(invoice =>
 							<Invoice
 								key={invoice.invoice}
@@ -38,8 +47,10 @@ class InvoiceList extends Component {
 								selected={this.state.selected}
 								passSelectedInvoice={this.selectedInvoice}
 							/>
-					)
-				}
+					)}
+
+					</table>
+		
 			</div>
 		)
 	}

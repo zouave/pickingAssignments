@@ -34,19 +34,31 @@ class Invoice extends Component {
 		if (selected === id) {
 			return (
 				<Fragment>
-					<div className='invoiceBox'>
-						<h1 onClick={() => passSelectedInvoice(id)}>Invoice: {id}. Company: {company}. Cases: {quantity}</h1>
-					</div>
-					<div className='invoiceBox1'>
+					
+						<tr className='invoiceBox' onClick={() => passSelectedInvoice(id)}>
+							<td className='invoiceNumber border'>{id}</td>
+							<td className='border'>{company}</td>
+							<td className='border'>Selector Name</td>
+							<td className='border'>Order Status</td>
+							<td className='border'>{quantity}</td>
+						</tr>
+					
+					<tr className='invoiceBox'>
 						<InvoiceBoxOptions clickedSearch={this.onClickedSearch} id={id} selectedSearch={this.state.selectedSearch}/>
-					</div>
+					</tr>
 				</Fragment>
 			)
 		} else {
 			return (
-				<div className='invoiceBox'>
-					<h1 onClick={() => passSelectedInvoice(id)}>Invoice: {id}. Company: {company}. Cases: {quantity}</h1>
-				</div>
+				
+					<tr className='invoiceBox'  onClick={() => passSelectedInvoice(id)}>
+						<td className='invoiceNumber border'>{id}</td>
+						<td className='border'>{company}</td>
+						<td className='border'>Selector Name</td>
+						<td className='border'>Order Status</td>
+						<td className='border'>{quantity}</td>
+					</tr>
+				
 			)
 		}
 	}
