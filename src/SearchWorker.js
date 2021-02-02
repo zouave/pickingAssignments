@@ -4,29 +4,27 @@ import Scroll from './Scroll';
 import WorkerList from './WorkerList';
 
 const SearchWorker = ({searchWorker, filteredWorkers}) => {
+	function inputBox() {
+		return (
+			<input
+				className='searchBar pa3  ba b--green bg-lightest-blue'
+				type='search' 
+				placeholder='search workers'
+				onChange={searchWorker}
+			/>
+		)
+	}
 	if(filteredWorkers.length > 0)
 		return (
 			<Fragment>
-				<input
-					className='searchBar pa3  ba b--green bg-lightest-blue'
-					type='search' 
-					placeholder='search workers'
-					onChange={searchWorker}
-				/>
+				{inputBox()}
 				<Scroll>
 					<WorkerList workers={filteredWorkers}/>
 				</Scroll>
 			</Fragment>
 		)
 
-	return (
-		<input
-			className='searchBar pa3 ba b--green bg-lightest-blue'
-			type='search' 
-			placeholder='search workers'
-			onChange={searchWorker}
-		/>
-	)
+	return inputBox()
 }
 
 export default SearchWorker;

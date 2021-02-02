@@ -30,25 +30,28 @@ class InvoiceList extends Component {
 			<div className=''>
 	
 					<table>
-						<tr>
-							<th className='invoiceNumber border'>Invoice #</th>
-							<th className='comapny border'>Company</th>
-							<th className='worker border'>Worker</th>
-							<th className='status border'>Status</th>
-							<th className='quantity border'>Quantity</th>
-						</tr>
-					{
-					invoices.map(invoice =>
-							<Invoice
-								key={invoice.invoice}
-								id={invoice.invoice}
-								company={invoice.company}
-								quantity={invoice.cases}
-								selected={this.state.selected}
-								passSelectedInvoice={this.selectedInvoice}
-							/>
-					)}
-
+						<thead>
+							<tr>
+								<th className='invoiceNumber border'>Invoice #</th>
+								<th className='comapny border'>Company</th>
+								<th className='worker border'>Worker</th>
+								<th className='status border'>Status</th>
+								<th className='quantity border'>Quantity</th>
+							</tr>
+						</thead>
+						<tbody>
+							{
+							invoices.map(invoice =>
+									<Invoice
+										key={invoice.invoice}
+										id={invoice.invoice}
+										company={invoice.company}
+										quantity={invoice.cases}
+										selected={this.state.selected}
+										passSelectedInvoice={this.selectedInvoice}
+									/>
+							)}
+						</tbody>
 					</table>
 		
 			</div>
