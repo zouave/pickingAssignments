@@ -35,7 +35,7 @@ class Invoice extends Component {
 			return (
 				<Fragment>
 					
-						<tr className='invoiceBox' onClick={() => passSelectedInvoice(id)}>
+						<tr className='invoiceBox highlight' onClick={() => passSelectedInvoice(id)}>
 							<td className='invoiceNumber border'>{id}</td>
 							<td className='border'>{company}</td>
 							<td className='border'>Selector Name</td>
@@ -43,7 +43,7 @@ class Invoice extends Component {
 							<td className='border'>{quantity}</td>
 						</tr>
 					
-					<tr className='invoiceBox'>
+					<tr className='invoiceBox highlight'>
 						<InvoiceBoxOptions clickedSearch={this.onClickedSearch} id={id} selectedSearch={this.state.selectedSearch}/>
 					</tr>
 				</Fragment>
