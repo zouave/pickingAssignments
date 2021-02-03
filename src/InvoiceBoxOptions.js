@@ -16,19 +16,18 @@ const InvoiceBoxOptions = ({clickedSearch, selectedSearch, id}) => {
 	if (selectedSearch === id) {
 		return (
 			<Fragment>
-				<td className='flexit border'>
+				<td className='flexit '>
 					<button className='box border' onClick={console.log(id)}>Details</button>
 				</td>
-				<td className='father'>
+				<td>
 					<OpenSearchBox 
-					className='son'
 					filteredWorkers={filteredWorkers} 
 					searchWorker={(event) => setSeearchField(event.target.value)}
 					/>
 				</td>
-				<td className='border'>a</td>
-				<td className='border'>v</td>
-				<td className='border'>c</td>
+				<td className='border'>Placeholder</td>
+				<td className='border'>Placeholder</td>
+				<td className='border'>Placeholder</td>
 			</Fragment>
 		)	
 	}
