@@ -38,7 +38,7 @@ const SearchWorker = ({searchWorker, filteredWorkers}) => {
 			<input
 				className=' searchBar pa3  ba b--green bg-lightest-blue'
 				type='search' 
-				placeholder='search workers'
+				placeholder="Selector's name"
 				onChange={searchWorker}
 				onClick={handleOpen}
 			/>
@@ -50,7 +50,7 @@ const SearchWorker = ({searchWorker, filteredWorkers}) => {
 		return (
 			<div ref={node} className='father'>
 				{ inputBox() }
-				<Scroll open={open} className='son'>
+				<Scroll open={open} numberOfWorkers={filteredWorkers.length} className='son'>
 					<WorkerList workers={filteredWorkers}/>
 				</Scroll>
 			</div>

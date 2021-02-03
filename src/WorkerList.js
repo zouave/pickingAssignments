@@ -3,6 +3,7 @@ import Worker from './Worker';
 import './WorkerList.css';
 
 const WorkerList = ({workers}) => {
+
 	return (
 		<Fragment>
 			{

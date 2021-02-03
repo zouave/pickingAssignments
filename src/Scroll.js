@@ -1,13 +1,14 @@
 import React, {Fragment} from 'react';
 import './Scroll.css';
 
-const Scroll = (props) => {
-
+const Scroll = ({children, open, numberOfWorkers}) => {
+	const scrollStyle = numberOfWorkers > 3 ? ({overflowY: 'scroll', height: '180px', overflowX: 'hidden'}):({overflowY: 'auto'});
+	// console.log(scrollStyle);
 	return (
 		<Fragment>
-			{ props.open && 
-				<div className="abs" style={{overflowY: 'scroll', border: '1px solid black'}}>
-					{props.children}
+			{ open && 
+				<div className="workersList" style={scrollStyle}>
+					{children}
 				</div>
 			}
 		</Fragment>

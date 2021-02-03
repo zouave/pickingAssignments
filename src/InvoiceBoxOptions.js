@@ -5,7 +5,9 @@ import './InvoiceBoxOptions.css';
 
 const InvoiceBoxOptions = ({clickedSearch, selectedSearch, id}) => {
 	const [searchField, setSeearchField] = useState('');
+	const [showSearchBar, setShowSearchBar] = useState(false);
 	let filteredWorkers = [];
+
 
 	if(searchField.length > 0 ) {
 		filteredWorkers = workers.filter(worker => {
@@ -19,11 +21,11 @@ const InvoiceBoxOptions = ({clickedSearch, selectedSearch, id}) => {
 				<td className='flexit '>
 					<button className='box border' onClick={console.log(id)}>Details</button>
 				</td>
-				<td>
-					<OpenSearchBox 
+				<td><button onClick={() => setShowSearchBar(!showSearchBar)} className='showSearchBar'>Show/Hide  SearchBar</button>
+					{showSearchBar && <OpenSearchBox 
 					filteredWorkers={filteredWorkers} 
 					searchWorker={(event) => setSeearchField(event.target.value)}
-					/>
+					/>}
 				</td>
 				<td className='border'>Placeholder</td>
 				<td className='border'>Placeholder</td>
