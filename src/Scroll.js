@@ -2,7 +2,9 @@ import React, {Fragment} from 'react';
 import './Scroll.css';
 
 const Scroll = ({children, open, numberOfWorkers}) => {
-	const scrollStyle = numberOfWorkers > 3 ? ({overflowY: 'scroll', height: '180px', overflowX: 'hidden'}):({overflowY: 'auto'});
+	const scrollStyle = numberOfWorkers > 3 ? 
+		{overflowY: 'scroll', height: '180px', overflowX: 'hidden'}:
+		{overflowY: 'auto', overflowX: 'hidden'};
 	// console.log(scrollStyle);
 	return (
 		<Fragment>
