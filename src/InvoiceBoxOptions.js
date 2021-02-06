@@ -19,7 +19,7 @@ const InvoiceBoxOptions = ({clickedSearch, selectedSearch, id, assignWorker, sel
 		return (
 			<Fragment>
 				<td className='flexit '>
-					<button className='box border' onClick={console.log(id)}>Details</button>
+					<button className='box border' onClick={console.log('This is supposed to be executing on Load Details button but somehow click on other elements triggers it.')}>Details</button>
 				</td>
 				<td><button onClick={() => setShowSearchBar(!showSearchBar)} className='showSearchBar'>Show/Hide  SearchBar</button>
 					{

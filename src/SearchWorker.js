@@ -14,8 +14,7 @@ const SearchWorker = ({searchWorker, filteredWorkers, assignWorker, selectedWork
 		}
 		//outside click
 		setOpen(false);
-		console.log('Clicked outside the node');
-
+		// console.log('Clicked outside the node');
 	}
 
 	const handleOpen = () => {
@@ -30,7 +29,7 @@ const SearchWorker = ({searchWorker, filteredWorkers, assignWorker, selectedWork
 
 	const workerSelected = () => {
 		setOpen(!open)
-		console.log('workerSelected function executed')
+		// console.log('workerSelected function executed')
 	}
 
 	useEffect(() => {
