@@ -5,7 +5,7 @@ const Scroll = ({children, open, numberOfWorkers}) => {
 	const scrollStyle = numberOfWorkers > 3 ? 
 		{overflowY: 'scroll', height: '180px', overflowX: 'hidden'}:
 		{overflowY: 'auto', overflowX: 'hidden'};
-	// console.log(scrollStyle);
+
 	return (
 		<Fragment>
 			{ open && 

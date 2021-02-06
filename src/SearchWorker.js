@@ -3,7 +3,7 @@ import './SearchWorker.css';
 import Scroll from './Scroll';
 import WorkerList from './WorkerList';
 
-const SearchWorker = ({searchWorker, filteredWorkers}) => {
+const SearchWorker = ({searchWorker, filteredWorkers, assignWorker, selectedWorker}) => {
 	const [open, setOpen] = useState(true);
 	const node = useRef();
 
@@ -20,11 +20,19 @@ const SearchWorker = ({searchWorker, filteredWorkers}) => {
 
 	const handleOpen = () => {
 		if(!open) {
+			resetValue();
 			setOpen(!open)
 			return;
 		}
+		resetValue();
 		return;
 	}
+
+	const workerSelected = () => {
+		setOpen(!open)
+		console.log('workerSelected function executed')
+	}
+
 	useEffect(() => {
 		document.addEventListener('mousedown', handleClick);
 
@@ -33,16 +41,24 @@ const SearchWorker = ({searchWorker, filteredWorkers}) => {
 		}
 	}, [])
 
+	const resetValue = () => {
+		document.getElementById('inputBox').value = '';
+	}
+
 	function inputBox() {
 		return (
 			<input
+				id='inputBox'
 				className=' searchBar pa3  ba b--green bg-lightest-blue'
 				type='search' 
 				placeholder="Selector's name"
+				autoComplete='off'
 				onChange={searchWorker}
 				onClick={handleOpen}
 			/>
 		)
+		
+		
 	}
 	
 
@@ -51,7 +67,7 @@ const SearchWorker = ({searchWorker, filteredWorkers}) => {
 			<div ref={node} className='father'>
 				{ inputBox() }
 				<Scroll open={open} numberOfWorkers={filteredWorkers.length} className='son'>
-					<WorkerList workers={filteredWorkers}/>
+					<WorkerList workerSelected={workerSelected} assignWorker={assignWorker} workers={filteredWorkers}/>
 				</Scroll>
 			</div>
 		)

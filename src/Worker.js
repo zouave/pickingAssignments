@@ -1,12 +1,16 @@
 import React from 'react';
 import './Worker.css';
 
-const Worker = ({employeeID, name, status}) => {
+const Worker = ({employeeID, name, status, assignWorker, workerSelected, resetSearchBar}) => {
 	// console.log(name);
 	return (
-		<div className='searchResults'>
-			<h3>{name}</h3>
-			<h6>{status}</h6>
+		<div onClick={resetSearchBar && workerSelected}>
+			<div onClick={workerSelected}>
+				<div className='searchResults' onClick={() => assignWorker(name)}>
+					<h3>{name}</h3>
+					<h6>{status}</h6>
+				</div>
+			</div>
 		</div>
 	)
 }

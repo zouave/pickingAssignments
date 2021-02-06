@@ -5,14 +5,15 @@ import './Invoice.css';
 import InvoiceBoxOptions from './InvoiceBoxOptions';
 
 class Invoice extends Component {
+
 	constructor(props) {
 		super(props);
 		this.state = {
 			selectedSearch: this.props.id,
-			// worker: []
+			worker: []
 		}
 		this.toggleInvoiceButtons = this.toggleInvoiceButtons.bind(this);
-
+		this.assignWorker = this.assignWorker.bind(this);
 	}
 
 	toggleInvoiceButtons() {
@@ -28,37 +29,48 @@ class Invoice extends Component {
 		this.setState({ selectedSearch: value})
 	}
 
-	renderInvoice() {
-		const {selected, passSelectedInvoice, id, company, quantity} = this.props;
+	assignWorker(name) {
+		this.setState({worker: name})
+		// console.log(name);
+		// console.log(this.state.worker.length)
+	}
 
+	invoiceDetails(passSelectedInvoice, id, company, quantity, worker, selected) {
+		const highlight = (selected === id) ?
+			{backgroundColor: '#faebc0'}:
+			{backgroundColor: ''}
+			
+		return <tr style={highlight} className='invoiceBox' onClick={() => passSelectedInvoice(id)}>
+					<td className='invoiceNumber border'>{id}</td>
+					<td className='border'>{company}</td>
+					<td className='border'>{worker}</td>
+					<td className='border'>Order Status</td>
+					<td className='border'>{quantity}</td>
+				</tr>
+	}
+
+	renderInvoice() {
+		const {selected, passSelectedInvoice, id, company, quantity, resetSearchBar} = this.props;
+		const {worker} = this.state;
 		if (selected === id) {
 			return (
 				<Fragment>
-					
-						<tr className='invoiceBox highlight' onClick={() => passSelectedInvoice(id)}>
-							<td className='invoiceNumber border'>{id}</td>
-							<td className='border'>{company}</td>
-							<td className='border'>Selector Name</td>
-							<td className='border'>Order Status</td>
-							<td className='border'>{quantity}</td>
-						</tr>
-					
+					{this.invoiceDetails(passSelectedInvoice, id, company, quantity, worker, selected)}
 					<tr className='invoiceBox highlight'>
-						<InvoiceBoxOptions clickedSearch={this.onClickedSearch} id={id} selectedSearch={this.state.selectedSearch}/>
+						<InvoiceBoxOptions 
+							selectedWorker={worker} 
+							assignWorker={this.assignWorker} 
+							clickedSearch={this.onClickedSearch} 
+							id={id} 
+							selectedSearch={this.state.selectedSearch}
+							resetSearchBar={resetSearchBar}
+						/>
 					</tr>
 				</Fragment>
 			)
 		} else {
 			return (
-				
-					<tr className='invoiceBox'  onClick={() => passSelectedInvoice(id)}>
-						<td className='invoiceNumber border'>{id}</td>
-						<td className='border'>{company}</td>
-						<td className='border'>Selector Name</td>
-						<td className='border'>Order Status</td>
-						<td className='border'>{quantity}</td>
-					</tr>
-				
+				this.invoiceDetails(passSelectedInvoice, id, company, quantity, worker, selected)
 			)
 		}
 	}

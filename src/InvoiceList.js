@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, {Component, Fragment} from 'react';
 import './InvoiceList.css';
 import {invoices} from './invoices';
 import Invoice from './Invoice';
@@ -14,6 +14,7 @@ class InvoiceList extends Component {
 		//This binding is necessary to make this work in the call back
 		this.selectedInvoice = this.selectedInvoice.bind(this);
 		this.onSearchWorker = this.onSearchWorker.bind(this);
+		this.resetSearchBar = this.resetSearchBar.bind(this);
 	}
 
 	selectedInvoice(invoiceNumber) {
@@ -22,13 +23,17 @@ class InvoiceList extends Component {
 
 	onSearchWorker(event) {
 		this.setState({searchField: event.target.value});
-		console.log(this.state.searchField);
+		// console.log(this.state.searchField);
+	}
+
+	resetSearchBar() {
+		this.setState({searchField: ''});
+		// console.log('Searchbar was reset... Searchfield=', this.state.searchField);
 	}
 
 	renderInvoiceList() {
 		return (
-			<div className=''>
-	
+			<Fragment>
 					<table>
 						<thead>
 							<tr>
@@ -54,7 +59,7 @@ class InvoiceList extends Component {
 						</tbody>
 					</table>
 		
-			</div>
+			</Fragment>
 		)
 	}
 	render() {

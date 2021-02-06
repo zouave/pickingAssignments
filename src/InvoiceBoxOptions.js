@@ -3,7 +3,7 @@ import OpenSearchBox from './OpenSearchBox';
 import {workers} from './workers';
 import './InvoiceBoxOptions.css';
 
-const InvoiceBoxOptions = ({clickedSearch, selectedSearch, id}) => {
+const InvoiceBoxOptions = ({clickedSearch, selectedSearch, id, assignWorker, selectedWorker, resetSearchBar}) => {
 	const [searchField, setSeearchField] = useState('');
 	const [showSearchBar, setShowSearchBar] = useState(false);
 	let filteredWorkers = [];
@@ -22,10 +22,16 @@ const InvoiceBoxOptions = ({clickedSearch, selectedSearch, id}) => {
 					<button className='box border' onClick={console.log(id)}>Details</button>
 				</td>
 				<td><button onClick={() => setShowSearchBar(!showSearchBar)} className='showSearchBar'>Show/Hide  SearchBar</button>
-					{showSearchBar && <OpenSearchBox 
-					filteredWorkers={filteredWorkers} 
-					searchWorker={(event) => setSeearchField(event.target.value)}
-					/>}
+					{
+						showSearchBar && 
+						<OpenSearchBox 
+							filteredWorkers={filteredWorkers} 
+							searchWorker={(event) => setSeearchField(event.target.value)}
+							assignWorker={assignWorker}
+							selectedWorker={selectedWorker}
+							resetSearchBar={resetSearchBar}
+						/>
+					}
 				</td>
 				<td className='border'>Placeholder</td>
 				<td className='border'>Placeholder</td>
