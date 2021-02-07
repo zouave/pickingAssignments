@@ -23,7 +23,7 @@ const InvoiceBoxOptions = ({clickedSearch, id, assignWorker, selectedWorker, res
 						<button 
 							className='box border' 
 							onClick={() => console.log('This is for Details button. For future referrence.')}>
-							Details for Invoice
+							Details
 						</button>
 						<div className=''>
 							<button 
