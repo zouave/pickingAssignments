@@ -9,7 +9,6 @@ class Invoice extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			selectedSearch: this.props.id,
 			worker: []
 		}
 		this.toggleInvoiceButtons = this.toggleInvoiceButtons.bind(this);
@@ -25,9 +24,6 @@ class Invoice extends Component {
 		console.log('Load details for invoice #', invoiceNumber)
 	}
 
-	onClickedSearch(value) {
-		this.setState({ selectedSearch: value})
-	}
 
 	assignWorker(name) {
 		this.setState({worker: name})
@@ -39,7 +35,7 @@ class Invoice extends Component {
 		const highlight = (selected === id) ?
 			{backgroundColor: '#faebc0'}:
 			{backgroundColor: ''}
-			
+
 		return <tr style={highlight} className='invoiceBox' onClick={() => passSelectedInvoice(id)}>
 					<td className='invoiceNumber border'>{id}</td>
 					<td className='border'>{company}</td>
@@ -62,7 +58,6 @@ class Invoice extends Component {
 							assignWorker={this.assignWorker} 
 							clickedSearch={this.onClickedSearch} 
 							id={id} 
-							selectedSearch={this.state.selectedSearch}
 							resetSearchBar={resetSearchBar}
 						/>
 					</tr>

@@ -58,7 +58,6 @@ class InvoiceList extends Component {
 							)}
 						</tbody>
 					</table>
-		
 			</Fragment>
 		)
 	}
