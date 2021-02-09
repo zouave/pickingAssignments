@@ -27,8 +27,6 @@ class Invoice extends Component {
 
 	assignWorker(name) {
 		this.setState({worker: name})
-		// console.log(name);
-		// console.log(this.state.worker.length)
 	}
 
 	invoiceDetails(passSelectedInvoice, id, company, quantity, worker, selected) {
@@ -64,9 +62,7 @@ class Invoice extends Component {
 				</Fragment>
 			)
 		} else {
-			return (
-				this.invoiceDetails(passSelectedInvoice, id, company, quantity, worker, selected)
-			)
+			return this.invoiceDetails(passSelectedInvoice, id, company, quantity, worker, selected)
 		}
 	}
 

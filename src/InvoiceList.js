@@ -31,7 +31,7 @@ class InvoiceList extends Component {
 		// console.log('Searchbar was reset... Searchfield=', this.state.searchField);
 	}
 
-	renderInvoiceList() {
+	render() {
 		return (
 			<Fragment>
 					<table>
@@ -59,10 +59,7 @@ class InvoiceList extends Component {
 						</tbody>
 					</table>
 			</Fragment>
-		)
-	}
-	render() {
-		return this.renderInvoiceList()		
+		)	
 	}
 }
 

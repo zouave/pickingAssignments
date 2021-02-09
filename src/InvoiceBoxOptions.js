@@ -16,37 +16,37 @@ const InvoiceBoxOptions = ({clickedSearch, id, assignWorker, selectedWorker, res
 	}
 	
 
-		return (
-			<Fragment>
-				<td colSpan='5' >
-					<div className='flexit'>
+	return (
+		<Fragment>
+			<td colSpan='5' >
+				<div className='flexit'>
+					<button 
+						className='box border' 
+						onClick={() => console.log('This is for Details button. For future referrence.')}>
+						Details
+					</button>
+					<div className=''>
 						<button 
-							className='box border' 
-							onClick={() => console.log('This is for Details button. For future referrence.')}>
-							Details
-						</button>
-						<div className=''>
-							<button 
-								onClick={() => setShowSearchBar(!showSearchBar)} 
-								className='showSearchBar'>
-									{showSearchBar ? 'Hide SearchBar':'Show SearchBar'}
-								</button>
-								{
-									showSearchBar && 
-									<SearchWorker
-										filteredWorkers={filteredWorkers} 
-										searchWorker={(event) => setSeearchField(event.target.value)}
-										assignWorker={assignWorker}
-										selectedWorker={selectedWorker}
-										resetSearchBar={resetSearchBar}
-									/>
-								}
-						</div>
+							onClick={() => setShowSearchBar(!showSearchBar)} 
+							className='showSearchBar'>
+								{showSearchBar ? 'Hide SearchBar':'Show SearchBar'}
+							</button>
+							{
+								showSearchBar && 
+								<SearchWorker
+									filteredWorkers={filteredWorkers} 
+									searchWorker={(event) => setSeearchField(event.target.value)}
+									assignWorker={assignWorker}
+									selectedWorker={selectedWorker}
+									resetSearchBar={resetSearchBar}
+								/>
+							}
 					</div>
-				</td>
+				</div>
+			</td>
 
-			</Fragment>
-		)	
+		</Fragment>
+	)	
 					
 }
 
