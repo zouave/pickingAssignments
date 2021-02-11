@@ -3,18 +3,21 @@ import SearchWorker from './SearchWorker';
 import {workers} from './workers';
 import './InvoiceBoxOptions.css';
 
-const InvoiceBoxOptions = ({clickedSearch, id, assignWorker, selectedWorker, resetSearchBar}) => {
-	const [searchField, setSeearchField] = useState('');
+const InvoiceBoxOptions = ({clickedSearch, id, assignWorker, selectedWorker}) => {
+	const [searchField, setSearchField] = useState('');
 	const [showSearchBar, setShowSearchBar] = useState(false);
 	let filteredWorkers = [];
-	console.log(selectedWorker);
 
-	if(searchField.length > 0 ) {
+	if(searchField.length) {
 		filteredWorkers = workers.filter(worker => {
 			return worker.name.toLowerCase().includes(searchField.toLowerCase());
 		})
 	}
 	
+	const resetSearchField = () => {
+		//This clears searchField resulting in empty list of workers
+		setSearchField('');
+	}
 
 	return (
 		<Fragment>
@@ -25,7 +28,7 @@ const InvoiceBoxOptions = ({clickedSearch, id, assignWorker, selectedWorker, res
 						onClick={() => console.log('This is for Details button. For future referrence.')}>
 						Details
 					</button>
-					<div className=''>
+					<div>
 						<button 
 							className='showSearchBar pointer'
 							onClick={() => setShowSearchBar(!showSearchBar)}>
@@ -35,15 +38,14 @@ const InvoiceBoxOptions = ({clickedSearch, id, assignWorker, selectedWorker, res
 								showSearchBar && 
 								<SearchWorker
 									filteredWorkers={filteredWorkers} 
-									searchWorker={(event) => setSeearchField(event.target.value)}
+									searchWorker={(event) => setSearchField(event.target.value)}
 									assignWorker={assignWorker}
-									selectedWorker={selectedWorker}
-									resetSearchBar={resetSearchBar}
+									resetSearchField={resetSearchField}
 								/>
 							}
 					</div>
 					{
-						(selectedWorker.length > 0) ?
+						(selectedWorker.length) ?
 							<button className='box border pointer picking'>Start Picking</button>:
 							<button disabled className='box border picking not-allowed'>Start Picking</button>
 					}

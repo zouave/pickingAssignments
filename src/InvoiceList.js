@@ -8,27 +8,13 @@ class InvoiceList extends Component {
 		super(props);
 		this.state = {
 			selected: null,
-			searchField: '',
-	
 		}
 		//This binding is necessary to make this work in the call back
 		this.selectedInvoice = this.selectedInvoice.bind(this);
-		this.onSearchWorker = this.onSearchWorker.bind(this);
-		this.resetSearchBar = this.resetSearchBar.bind(this);
 	}
 
 	selectedInvoice(invoiceNumber) {
 		this.setState({ selected: invoiceNumber })
-	}
-
-	onSearchWorker(event) {
-		this.setState({searchField: event.target.value});
-		// console.log(this.state.searchField);
-	}
-
-	resetSearchBar() {
-		this.setState({searchField: ''});
-		// console.log('Searchbar was reset... Searchfield=', this.state.searchField);
 	}
 
 	render() {

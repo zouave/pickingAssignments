@@ -2,14 +2,14 @@ import React, {Fragment} from 'react';
 import Worker from './Worker';
 import './WorkerList.css';
 
-const WorkerList = ({workers, assignWorker, workerSelected, resetSearchBar}) => {
+const WorkerList = ({workers, assignWorker, workerSelected, resetSearchField}) => {
 
 	return (
 		<Fragment>
 			{
 				workers.map(worker => 
 					<Worker
-						resetSearchBar={resetSearchBar}
+						resetSearchField={resetSearchField}
 						workerSelected={workerSelected}
 						assignWorker={assignWorker}
 						key={worker.id}

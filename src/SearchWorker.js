@@ -3,35 +3,38 @@ import './SearchWorker.css';
 import Scroll from './Scroll';
 import WorkerList from './WorkerList';
 
-const SearchWorker = ({searchWorker, filteredWorkers, assignWorker, selectedWorker}) => {
+const SearchWorker = ({searchWorker, filteredWorkers, assignWorker, resetSearchField}) => {
 	const [open, setOpen] = useState(true);
 	const node = useRef();
 
 	const handleClick = e => {
 		if (node.current.contains(e.target)) {
 			//inside click
+			resetInputBoxValue();
 			return;
 		}
 		//outside click
+		resetInputBoxValue();
 		setOpen(false);
-		// console.log('Clicked outside the node');
 	}
 
 	const handleOpen = () => {
 		if(!open) {
-			resetValue();
+			resetSearchField();
 			setOpen(!open)
 			return;
 		}
-		resetValue();
+		resetSearchField();
 		return;
 	}
 
 	const workerSelected = () => {
 		setOpen(!open)
-		// console.log('workerSelected function executed')
 	}
 
+	const resetInputBoxValue = () => {
+		document.getElementById('inputBox').value = '';
+	}
 	useEffect(() => {
 		document.addEventListener('mousedown', handleClick);
 
@@ -40,9 +43,7 @@ const SearchWorker = ({searchWorker, filteredWorkers, assignWorker, selectedWork
 		}
 	}, [])
 
-	const resetValue = () => {
-		document.getElementById('inputBox').value = '';
-	}
+
 
 	function inputBox() {
 		return (
@@ -61,12 +62,17 @@ const SearchWorker = ({searchWorker, filteredWorkers, assignWorker, selectedWork
 	}
 	
 
-	if(filteredWorkers.length > 0 )
+	if(filteredWorkers.length)
 		return (
 			<div ref={node} className='father'>
 				{ inputBox() }
 				<Scroll open={open} numberOfWorkers={filteredWorkers.length} className='son'>
-					<WorkerList workerSelected={workerSelected} assignWorker={assignWorker} workers={filteredWorkers}/>
+					<WorkerList 
+						resetSearchField={resetSearchField}
+						workerSelected={workerSelected} 
+						assignWorker={assignWorker} 
+						workers={filteredWorkers}
+					/>
 				</Scroll>
 			</div>
 		)

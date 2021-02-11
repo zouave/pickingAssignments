@@ -1,10 +1,10 @@
 import React from 'react';
 import './Worker.css';
 
-const Worker = ({employeeID, name, status, assignWorker, workerSelected, resetSearchBar}) => {
+const Worker = ({employeeID, name, status, assignWorker, workerSelected, resetSearchField}) => {
 	// console.log(name);
 	return (
-		<div onClick={resetSearchBar}>
+		<div onClick={resetSearchField}>
 			<div onClick={workerSelected}>
 				<div className='searchResults' onClick={() => assignWorker(name)}>
 					<h3>{name}</h3>

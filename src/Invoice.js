@@ -11,19 +11,8 @@ class Invoice extends Component {
 		this.state = {
 			worker: []
 		}
-		this.toggleInvoiceButtons = this.toggleInvoiceButtons.bind(this);
 		this.assignWorker = this.assignWorker.bind(this);
 	}
-
-	toggleInvoiceButtons() {
-		this.setState({ invoiceButtons: !this.state.invoiceButtons })
-
-	}
-
-	loadDetails(invoiceNumber) {
-		console.log('Load details for invoice #', invoiceNumber)
-	}
-
 
 	assignWorker(name) {
 		this.setState({worker: name})
@@ -51,10 +40,9 @@ class Invoice extends Component {
 				<Fragment>
 					{this.invoiceDetails(passSelectedInvoice, id, company, quantity, worker, selected)}
 					<tr className='invoiceBox highlight'>
-						<InvoiceBoxOptions 
-							selectedWorker={worker} 
+						<InvoiceBoxOptions
+							selectedWorker={worker}
 							assignWorker={this.assignWorker} 
-							clickedSearch={this.onClickedSearch} 
 							id={id} 
 							resetSearchBar={resetSearchBar}
 						/>
