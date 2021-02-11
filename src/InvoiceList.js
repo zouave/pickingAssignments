@@ -39,7 +39,7 @@ class InvoiceList extends Component {
 							<tr>
 								<th className='invoiceNumber border'>Invoice #</th>
 								<th className='comapny border'>Company</th>
-								<th className='worker border'>Worker</th>
+								<th className='worker border'>Selector</th>
 								<th className='status border'>Status</th>
 								<th className='quantity border'>Quantity</th>
 							</tr>

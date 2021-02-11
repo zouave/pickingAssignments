@@ -46,3 +46,15 @@
 .showSearchBar:hover {
 		background-color: rgba(255, 0, 0, 0.8);
 }
+
+.picking {
+	background-color: rgba(13, 130, 3, 0.5);
+}
+
+.picking:hover {
+	background-color: rgba(13, 130, 3, 0.9);
+}
+
+.not-allowed {
+	cursor: not-allowed;
+}

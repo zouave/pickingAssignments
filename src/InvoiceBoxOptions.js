@@ -7,7 +7,7 @@ const InvoiceBoxOptions = ({clickedSearch, id, assignWorker, selectedWorker, res
 	const [searchField, setSeearchField] = useState('');
 	const [showSearchBar, setShowSearchBar] = useState(false);
 	let filteredWorkers = [];
-
+	console.log(selectedWorker);
 
 	if(searchField.length > 0 ) {
 		filteredWorkers = workers.filter(worker => {
@@ -21,14 +21,14 @@ const InvoiceBoxOptions = ({clickedSearch, id, assignWorker, selectedWorker, res
 			<td colSpan='5' >
 				<div className='flexit'>
 					<button 
-						className='box border' 
+						className='box border pointer' 
 						onClick={() => console.log('This is for Details button. For future referrence.')}>
 						Details
 					</button>
 					<div className=''>
 						<button 
-							onClick={() => setShowSearchBar(!showSearchBar)} 
-							className='showSearchBar'>
+							className='showSearchBar pointer'
+							onClick={() => setShowSearchBar(!showSearchBar)}>
 								{showSearchBar ? 'Hide SearchBar':'Show SearchBar'}
 							</button>
 							{
@@ -42,6 +42,11 @@ const InvoiceBoxOptions = ({clickedSearch, id, assignWorker, selectedWorker, res
 								/>
 							}
 					</div>
+					{
+						(selectedWorker.length > 0) ?
+							<button className='box border pointer picking'>Start Picking</button>:
+							<button disabled className='box border picking not-allowed'>Start Picking</button>
+					}
 				</div>
 			</td>
 
