@@ -1,25 +1,25 @@
 {
   "files": {
-    "main.css": "/pickingAssignments/static/css/main.a023da9a.chunk.css",
-    "main.js": "/pickingAssignments/static/js/main.b200c008.chunk.js",
-    "main.js.map": "/pickingAssignments/static/js/main.b200c008.chunk.js.map",
-    "runtime-main.js": "/pickingAssignments/static/js/runtime-main.51cd3393.js",
-    "runtime-main.js.map": "/pickingAssignments/static/js/runtime-main.51cd3393.js.map",
+    "main.css": "/pickingAssignments/static/css/main.dbaa8bfe.chunk.css",
+    "main.js": "/pickingAssignments/static/js/main.e0f705ac.chunk.js",
+    "main.js.map": "/pickingAssignments/static/js/main.e0f705ac.chunk.js.map",
+    "runtime-main.js": "/pickingAssignments/static/js/runtime-main.7a049b26.js",
+    "runtime-main.js.map": "/pickingAssignments/static/js/runtime-main.7a049b26.js.map",
     "static/css/2.31461e4f.chunk.css": "/pickingAssignments/static/css/2.31461e4f.chunk.css",
-    "static/js/2.d7f9bc2f.chunk.js": "/pickingAssignments/static/js/2.d7f9bc2f.chunk.js",
-    "static/js/2.d7f9bc2f.chunk.js.map": "/pickingAssignments/static/js/2.d7f9bc2f.chunk.js.map",
-    "static/js/3.5fd7c895.chunk.js": "/pickingAssignments/static/js/3.5fd7c895.chunk.js",
-    "static/js/3.5fd7c895.chunk.js.map": "/pickingAssignments/static/js/3.5fd7c895.chunk.js.map",
+    "static/js/2.e95a8b41.chunk.js": "/pickingAssignments/static/js/2.e95a8b41.chunk.js",
+    "static/js/2.e95a8b41.chunk.js.map": "/pickingAssignments/static/js/2.e95a8b41.chunk.js.map",
+    "static/js/3.aacd8d05.chunk.js": "/pickingAssignments/static/js/3.aacd8d05.chunk.js",
+    "static/js/3.aacd8d05.chunk.js.map": "/pickingAssignments/static/js/3.aacd8d05.chunk.js.map",
     "index.html": "/pickingAssignments/index.html",
     "static/css/2.31461e4f.chunk.css.map": "/pickingAssignments/static/css/2.31461e4f.chunk.css.map",
-    "static/css/main.a023da9a.chunk.css.map": "/pickingAssignments/static/css/main.a023da9a.chunk.css.map",
-    "static/js/2.d7f9bc2f.chunk.js.LICENSE.txt": "/pickingAssignments/static/js/2.d7f9bc2f.chunk.js.LICENSE.txt"
+    "static/css/main.dbaa8bfe.chunk.css.map": "/pickingAssignments/static/css/main.dbaa8bfe.chunk.css.map",
+    "static/js/2.e95a8b41.chunk.js.LICENSE.txt": "/pickingAssignments/static/js/2.e95a8b41.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.51cd3393.js",
+    "static/js/runtime-main.7a049b26.js",
     "static/css/2.31461e4f.chunk.css",
-    "static/js/2.d7f9bc2f.chunk.js",
-    "static/css/main.a023da9a.chunk.css",
-    "static/js/main.b200c008.chunk.js"
+    "static/js/2.e95a8b41.chunk.js",
+    "static/css/main.dbaa8bfe.chunk.css",
+    "static/js/main.e0f705ac.chunk.js"
   ]
 }
