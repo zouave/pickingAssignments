@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import './App.css';
 import InvoiceList from './InvoiceList';
+import WorkersPage from './WorkersPage'
 // import Test from './Test';
 
 class App extends Component {
@@ -25,12 +26,16 @@ class App extends Component {
 
     if (page === 'Picking') {
       return (
-        <div className='invoiceContainer'>
+        <div className='container'>
           <InvoiceList />
         </div>
       )
     } else if (page === 'Workers') {
-      return 'Workers Page.'
+      return (
+        <div className='container'>
+          <WorkersPage />
+        </div>
+      )
     } else if (page === 'Settings') {
       return 'Settings Page.'
     }  else if (page === 'InvoiceDetails') {

@@ -1,8 +1,8 @@
 import React from 'react';
 import './Worker.css';
 
-const Worker = ({employeeID, name, status, assignWorker, workerSelected, resetSearchField}) => {
-	// console.log(name);
+const Worker = ({name, status, assignWorker, workerSelected, resetSearchField}) => {
+
 	return (
 		<div onClick={resetSearchField}>
 			<div onClick={workerSelected}>

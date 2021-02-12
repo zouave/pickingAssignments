@@ -6,18 +6,10 @@ import './InvoiceBoxOptions.css';
 const InvoiceBoxOptions = ({clickedSearch, id, assignWorker, selectedWorker}) => {
 	const [searchField, setSearchField] = useState('');
 	const [showSearchBar, setShowSearchBar] = useState(false);
-	let filteredWorkers = [];
 
-	if(searchField.length) {
-		filteredWorkers = workers.filter(worker => {
+	const filteredWorkers = workers.filter(worker => {
 			return worker.name.toLowerCase().includes(searchField.toLowerCase());
-		})
-	}
-	
-	const resetSearchField = () => {
-		//This clears searchField resulting in empty list of workers
-		setSearchField('');
-	}
+		});
 
 	return (
 		<Fragment>
@@ -41,7 +33,7 @@ const InvoiceBoxOptions = ({clickedSearch, id, assignWorker, selectedWorker}) =>
 									filteredWorkers={filteredWorkers} 
 									searchWorker={(event) => setSearchField(event.target.value)}
 									assignWorker={assignWorker}
-									resetSearchField={resetSearchField}
+									resetSearchField={() => setSearchField('')}
 								/>
 							}
 					</div>
