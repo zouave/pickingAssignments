@@ -3,23 +3,22 @@ import './SearchWorker.css';
 import Scroll from './Scroll';
 import WorkerList from './WorkerList';
 
-const SearchWorker = ({searchWorker, filteredWorkers, assignWorker, resetSearchField}) => {
+const SearchWorker = ({searchWorker, filteredWorkers, assignWorker, resetSearchField, inputBoxValue}) => {
 	const [open, setOpen] = useState(true);
 	const node = useRef();
 
 	const handleClick = e => {
 		if (node.current.contains(e.target)) {
 			//inside click
-			resetInputBoxValue();
 			return;
 		}
-		//outside click
-		resetInputBoxValue();
+		//outside click, if mouse click is outside node then closes the Scroll/WorkerList
 		setOpen(false);
 	}
 
-	const handleOpen = () => {
+	const handleInputBoxClick = () => {
 		if(!open) {
+			//Resets searchField = filteredWorkers will be an empty array
 			resetSearchField();
 			setOpen(!open)
 			return;
@@ -32,12 +31,8 @@ const SearchWorker = ({searchWorker, filteredWorkers, assignWorker, resetSearchF
 		setOpen(!open)
 	}
 
-	const resetInputBoxValue = () => {
-		document.getElementById('inputBox').value = '';
-	}
 	useEffect(() => {
 		document.addEventListener('mousedown', handleClick);
-
 		return () => {
 			document.removeEventListener('mousedown', handleClick);
 		}
@@ -53,8 +48,9 @@ const SearchWorker = ({searchWorker, filteredWorkers, assignWorker, resetSearchF
 				type='search' 
 				placeholder="Selector's name"
 				autoComplete='off'
+				value={inputBoxValue}
 				onChange={searchWorker}
-				onClick={handleOpen}
+				onClick={handleInputBoxClick}
 			/>
 		)
 		

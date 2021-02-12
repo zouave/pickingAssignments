@@ -37,6 +37,7 @@ const InvoiceBoxOptions = ({clickedSearch, id, assignWorker, selectedWorker}) =>
 							{
 								showSearchBar && 
 								<SearchWorker
+									inputBoxValue={searchField}
 									filteredWorkers={filteredWorkers} 
 									searchWorker={(event) => setSearchField(event.target.value)}
 									assignWorker={assignWorker}
